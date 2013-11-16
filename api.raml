@@ -1,0 +1,17 @@
+#%RAML 0.8
+title: "SpheREST: Sphero RESTful API"
+baseUri: http://localhost:5000
+mediaType: application/json
+/color:
+  get:
+  put:
+    body:
+      application/json:
+        example: |
+          { "color": "red" }
+/motion:
+  put:
+    body:
+      application/json:
+        example: |
+          { "heading": 0, "speed": 50, "state": 1 }

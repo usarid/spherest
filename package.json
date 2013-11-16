@@ -1,0 +1,15 @@
+{
+  "name": "spheREST2",
+  "version": "0.1.0",
+  "description": "RESTful Sphero API with RAML",
+  "engines": {
+      "node": ">=0.10.5"
+  },
+  "author": "Uri Sarid",
+  "license": "BSD",
+  "dependencies": {
+    "spheron": ">=0.0.1",
+    "express": "3.x"
+  },
+  "private": true
+}
