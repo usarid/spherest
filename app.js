@@ -4,7 +4,7 @@ var spheron = require('spheron');
 var sphero = spheron.sphero();
 var fs = require('fs');
 
-var spheroPort = '/dev/cu.Sphero-YGY-AMP-SPP';
+var spheroPort = '/dev/cu.Sphero-RWB-RN-SPP';
 var apiPort = parseInt(process.env.PORT) || 5000;
 
 app.configure(function () 
@@ -31,12 +31,12 @@ function getRaml(request, response)
 
 function getColor(request, response)
 {
-    var seqId = sequenceId++;
+    var seqId = _sequenceId++;
     packetHandlers[seqId] = function (packet)
     {
         var colorInHex = packet.DATA.toString('hex');
         console.log({ color: '0x' + colorInHex });
-        response.send(200);
+        response.send({ color: '0x' + colorInHex.toUpperCase() });
     }
     console.log({ requestAcknowledgement: true, SEQ: seqId });
     sphero.getRGB({ requestAcknowledgement: true, SEQ: seqId });
